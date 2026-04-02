@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In the World of Books</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    #welcome-title {
+      letter-spacing: 1px;
+    }
+
+    .quote-word {
+      color: #7b2d3a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <div class="container header-box">
+      <h1 class="site-title">In the World of Books</h1>
+      <p class="site-subtitle"><em>Read more. Imagine more.</em></p>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="genres.html">Genres</a></li>
+          <li><a href="books.html">Books</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero clearfix" id="welcome">
+      <div class="hero-badge">Spring collection</div>
+
+      <div class="hero-text">
+        <h2 id="welcome-title" class="big-text">Welcome to the world of books</h2>
+        <p class="media-note">
+          This small website is about books, genres, and reading choices. 
+          The design was inspired by soft reading apps and calm magazine layouts.
+        </p>
+        <p>
+          <span class="quote-word">Books</span> can give adventure, emotions, mystery and new ideas.<br>
+          You can start from the genres page and then move to the books page.
+        </p>
+        <br>
+
+        <a href="genres.html" class="btn">See genres</a>
+        <a href="https://www.gutenberg.org/" target="_blank" rel="noopener" class="btn btn-light">External library</a>
+      </div>
+
+      <figure class="hero-figure">
+        <img src="images/books.jfif" alt="Book cover illustration">
+        <figcaption class="cover-note">Soft colors were chosen to match the reference style.</figcaption>
+      </figure>
+    </section>
+
+    <section class="card">
+      <h2>Reader form</h2>
+      <p class="small-note">This form was added to meet the assignment requirement.</p>
+
+      <form action="#" method="post" id="reader-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="color">Favorite color</label>
+        <select id="color" name="color">
+          <option value="pink">Pink</option>
+          <option value="burgundy">Burgundy</option>
+          <option value="white">White</option>
+          <option value="black">Black</option>
+        </select>
+
+        <input type="submit" value="Submit" class="btn">
+      </form>
+    </section>
+
+    <section class="two-col clearfix">
+      <article class="col card list-box">
+        <h3>What you can find here</h3>
+        <ul>
+          <li>Fantasy books</li>
+          <li>Detective stories</li>
+          <li>Romance books</li>
+          <li>Classical literature</li>
+        </ul>
+      </article>
+
+      <aside class="col right-col card list-box">
+        <h3>How to use the site</h3>
+        <ol>
+          <li>Open the genres page</li>
+          <li>Choose a category</li>
+          <li>Go to the books page</li>
+          <li>Read short information about each book</li>
+        </ol>
+      </aside>
+    </section>
+
+    <section class="card quote-box">
+      <h2>Favorite quote</h2>
+      <article>
+        <blockquote>
+          “Literature is the most pleasant way to ignore life.”
+          <footer>— Fernando Pessoa</footer>
+        </blockquote>
+      </article>
+    </section>
+
+    <section class="card" id="schedule">
+      <h2>Schedule for adding new books</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Book</th>
+              <th>Day</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The Escape Game</td>
+              <td><time datetime="2026-04-07">April 7</time></td>
+              <td>18:00</td>
+            </tr>
+            <tr>
+              <td>A Brewed Awakening</td>
+              <td><time datetime="2026-05-05">May 5</time></td>
+              <td>14:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-box">
+      <hr>
+      <address>Created for Web Tech Assignment 1</address>
+      <p>2026, In the World of Books. All rights reserved.</p>
+      <p><a href="#top">Back to top</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const readerForm = document.getElementById("reader-form");
+    const colorField = document.getElementById("color");
+    const backgroundThemes = {
+      pink: "linear-gradient(to right, #fde7ef 0%, #fde7ef 50%, #f6cad8 50%, #f6cad8 100%)",
+      burgundy: "linear-gradient(to right, #f2d7dd 0%, #f2d7dd 50%, #7b2d3a 50%, #7b2d3a 100%)",
+      white: "linear-gradient(to right, #ffffff 0%, #ffffff 50%, #f2f2f2 50%, #f2f2f2 100%)",
+      black: "linear-gradient(to right, #d9d9d9 0%, #d9d9d9 50%, #1f1f1f 50%, #1f1f1f 100%)"
+    };
+
+    readerForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      document.body.style.background = backgroundThemes[colorField.value] || "";
+    });
+  </script>
+</body>
+</html>
